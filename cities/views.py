@@ -15,20 +15,20 @@ def home(request):
     paginator = Paginator(cities, 2)
     page = request.GET.get('page')
     cities = paginator.get_page(page)
-    return render(request, 'home.html', {'objects_list': cities, })
+    return render(request, 'city_home.html', {'objects_list': cities, })
 
 
 class CityDetailView(DetailView):
     queryset = City.objects.all()
     context_object_name = 'object'
-    template_name = 'detail.html'
+    template_name = 'city_detail.html'
 
 
 class CityCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     login_url = '/login/'
     model = City
     form_class = CityForm
-    template_name = 'create.html'
+    template_name = 'city_create.html'
     success_url = reverse_lazy('city:home')
     success_message = 'The city has been successfully created!'
 
@@ -37,7 +37,7 @@ class CityUpdateView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     login_url = '/login/'
     model = City
     form_class = CityForm
-    template_name = 'update.html'
+    template_name = 'city_update.html'
     success_url = reverse_lazy('city:home')
     success_message = 'The city has been successfully edited!'
 

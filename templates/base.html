@@ -32,7 +32,7 @@
         <a class="nav-link" href="{% url 'train:home'%}">Trains</a>
       </li>
       <li class="nav-item {% if request.path == list_url %} active {% endif %}">
-        <a class="nav-link" href="{% url 'home'%} ">Routes</a>
+        <a class="nav-link" href="{% url 'list'%}">Routes</a>
       </li>
       <li class="nav-item dropdown 
         {% if request.path == train_add_url or request.path == city_add_url %}
@@ -42,8 +42,8 @@
          Add
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">New city</a>
-          <a class="dropdown-item" href="#">New train</a>
+          <a class="dropdown-item" href="{% url 'city:add'%}">New city</a>
+          <a class="dropdown-item" href="{% url 'train:add'%}">New train</a>
           <!--<a class="dropdown-item" href="#">Something else here</a>-->
         </div>
       </li>
