@@ -87,12 +87,12 @@ WSGI_APPLICATION = 'travel_master.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DB_NAME',
-        'PASSWORD':'DB_PASSWORD',
-        'USER': 'DB_USER',
-        'HOST': 'DB_HOST',
+        'NAME': 'travel_master',
+        'PASSWORD':'2314152xi',
+        'USER': 'postgres',
+        'HOST': 'localhost',
         'PORT': '5432',
-    }
+}
 }
 
 import dj_database_url
