@@ -12,7 +12,7 @@ from .forms import CityForm
 
 def home(request):
     cities = City.objects.all()
-    paginator = Paginator(cities, 2)
+    paginator = Paginator(cities, 5)
     page = request.GET.get('page')
     cities = paginator.get_page(page)
     return render(request, 'city_home.html', {'objects_list': cities, })

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title%}Sign up{% endblock%}
+
+{% block content%}
+    <div class="row mx-auto">      
+        <div class='col-md-6'>
+            <h1 class="display-4">Hello, {{new_user.username}}</h1>
+            <p>You have been successfully signed up. Now you can <a href="{%url 'login' %}"> sign in</a> </p>
+        </div>
+    </div>
+
+
+{% endblock%}
