@@ -81,7 +81,7 @@ def find_routes(request):
                 if total_time <= travelling_time:
                     trains.append(tmp)
             if not trains:
-                messages.error(request, 'Duration time is more than set')
+                messages.error(request, 'The duration time is longer than you entered. You should increase the duration time')
                 return render(request, 'route_home.html', {'form': form})
             routes = []
             cities = {'from_city': from_city.name, 'to_city': to_city.name}
